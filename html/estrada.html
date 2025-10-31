@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciclotech</title>
+    <link rel="stylesheet" href="../css/modalidades.css">
+</head>
+
+<body>
+    <header>
+        <div class="lado-esquerdo">
+            <a href="../html/login.php">LOGIN</a>
+            <a href="../html/contato.html">CONTATO</a>
+            <a href="../html/homepage.php">HOME</a>
+        </div>
+
+        <div class="logo">
+            <img src="../img/logo.png" alt="Ciclotech">
+        </div>
+
+        <div class="carrinho">
+            <img src="../img/carrinho.png" alt="Carrinho">
+        </div>
+    </header>
+    <!-- ================= BARRA DE PESQUISA ================= -->
+    <div class="barra-de-buscar-container">
+        <div class="barra-de-buscar">
+            <input id="input-busca" type="text" placeholder="O que você está buscando?">
+            <button id="botao-busca">
+                <img src="../img/Search.png" alt="Buscar">
+            </button>
+        </div>
+    </div>
+
+    <!-- ================= RESULTADOS DA PESQUISA ================= -->
+    <h1 id="titulo-pesquisa" style="display:none;">Resultados da Pesquisa</h1>
+    <div id="resultado-pesquisa" class="container" style="display:none;"></div>
+
+    <br>
+    <nav>
+        <a href="#">Bicicletas/Quadros</a>
+        <span>|</span>
+        <a href="#">Capacetes</a>
+        <span>|</span>
+        <a href="#">Rodas</a>
+        <span>|</span>
+        <a href="#">Pneus/Câmaras</a>
+        <span>|</span>
+        <a href="#">Óculos</a>
+        <span>|</span>
+        <a href="#">Luvas</a>
+        <span>|</span>
+        <a href="#">Vestuário</a>
+        <span>|</span>
+        <a href="#">Kit Limpeza</a>
+    </nav>
+    <br><br>
+    <!-- ================= CARRINHO LATERAL ================= -->
+    <div id="carrinho-lateral" class="carrinho-lateral">
+        <div class="carrinho-header">
+            <h2>Carrinho</h2>
+            <button id="fechar-carrinho">&times;</button>
+        </div>
+        <div id="carrinho-itens" class="carrinho-itens">
+            <p>Seu carrinho está vazio</p>
+        </div>
+        <div class="carrinho-footer">
+            <div class="total">Total: <span id="carrinho-total">R$0,00</span></div>
+            <button id="finalizar-compra">Finalizar Compra</button>
+        </div>
+    </div>
+    <center>
+        <h1>Estrada</h1>
+    </center>
+
+    <div class="container">
+        <div class="card">
+            <a href="scottfoil.html">
+                <img src="../img/scott foil rc10.png" alt="Bicicleta Scott Foil RC 10 Preto Carbono Aparente">
+                <h2>Bicicleta Scott Foil RC 10 Preto Carbono Aparente</h2>
+                <div class="avista">À Vista</div>
+                <div class="preco-atual">R$64.599,91</div>
+                <div class="desconto">No Pix já com 5% de desconto</div>
+                <hr><br>
+                <div class="parcelas">R$67.999,90 ou 12X de <span>R$5.666,66</span> sem juros</div>
+                <br>
+                <button class="botao-comprar">COMPRAR</button>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="speedtrek.html">
+                <img src="../img/Speed Trek Madone SL 6 - 8° Geração.png" alt="Speed Trek Madone SL 6 - 8° Geração">
+                <h2>Speed Trek Madone SL 6 - 8° Geração</h2>
+                <div class="avista">À Vista</div>
+                <div class="preco-atual">R$ 39.990,00</div>
+                <div class="desconto">No Pix já com 5% de desconto</div>
+                <hr><br>
+                <div class="parcelas">R$48.000,00 ou 12X de <span>R$3.332,50</span> sem juros</div>
+                <br>
+                <button class="botao-comprar">COMPRAR</button>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="s-works.html">
+                <br><br><br>
+                <img src="../img/Speed Specialized S-Works Tarmac SL8.png" alt="Speed Specialized S-Works Tarmac SL8">
+                <br><br><br>
+                <h2>Speed Specialized S-Works Tarmac SL8</h2>
+                <div class="avista">À Vista</div>
+                <div class="preco-atual">R$ 113.990,00</div>
+                <div class="desconto">No Pix já com 5% de desconto</div>
+                <hr><br>
+                <div class="parcelas">R$113.990,00 ou 12X de <span>R$9.499,16</span> sem juros</div>
+                <br>
+                <button class="botao-comprar">COMPRAR</button>
+            </a>
+        </div>
+    </div>
+    <br><br>
+    <div class="container">
+        <div class="card">
+            <a href="pneugrand.html">
+                <br><br><br>
+                <img src="../img/Pneu Continental Grand Prix 5000 S TR.png" alt="Pneu Continental Grand Prix 5000 S TR"
+                    style="width: 50px;">
+                <br><br><br>
+                <h2>Pneu Continental Grand Prix 5000 S TR</h2>
+                <div class="avista">À Vista</div>
+                <div class="preco-antigo">De: R$1.099,00</div>
+                <div class="preco-atual">R$909,88</div>
+                <div class="desconto">No Pix já com 8% de desconto</div>
+                <hr><br>
+                <div class="parcelas">R$989,00 ou 6X de <span>R$82,42</span> sem juros</div>
+                <br>
+                <button class="botao-comprar">COMPRAR</button>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="pneuultra.html">
+                <br><br><br>
+                <img src="../img/Pneu Continental Ultra Sport 3.png" alt="Pneu Continental Ultra Sport 3"
+                    style="width: 60px;">
+                <br><br>
+                <h2>Pneu Continental Ultra Sport 3</h2>
+                <div class="avista">À Vista</div>
+                <div class="preco-atual">R$120,50</div>
+                <div class="desconto">No Pix já com 2.5% de desconto</div>
+                <hr><br>
+                <div class="parcelas">R$125,05 ou 6X de <span>R$20,05</span> sem juros</div>
+                <br>
+                <button class="botao-comprar">COMPRAR</button>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="bretelle.html">
+                <br><br><br>
+                <img src="../img/Capacete Abus Airbreaker.png" alt="Capacete Abus Airbreaker" style="width: 120px;">
+                <br><br><br><br>
+                <h2>Capacete Abus Airbreaker</h2>
+                <div class="avista">À Vista</div>
+                <div class="preco-atual">R$ 2.249,00</div>
+                <div class="desconto">No Pix já com 5% de desconto</div>
+                <hr><br>
+                <div class="parcelas">R$2.300,00 ou 18X de <span>R$ 138,83</span> sem juros</div>
+                <br>
+                <button class="botao-comprar">COMPRAR</button>
+            </a>
+        </div>
+    </div>
+    <br><br><br><br>
+    <footer>
+        <div class="footer-top">
+            <span>Entregamos para o Mundo inteiro</span>
+            <span>Desconto no pix: 10%</span>
+            <span>SITE 100% SEGURO</span>
+        </div>
+        <div class="footer-main">
+            <div class="footer-logo">
+                <img src="../img/logo.png" alt="Ciclotech">
+                <p>A loja mais especializada em itens de ciclismo geral no Brasil.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Informações</h3>
+                <ul>
+                    <li><a href="index.html">Cilcotech</a></li>
+                    <li><a href="#">Política De Privacidade</a></li>
+                    <li><a href="#">Trocas e Devoluções</a></li>
+                </ul>
+            </div>
+            <div class="footer-section footer-contact">
+                <h3>Atendimento</h3>
+                <p>Segunda a Sexta<br>10:00 ás 16:00</p>
+                <br>
+                <h3>Contato</h3>
+                <p>(12)1234-5678</p>
+                <p>(12)1234-5678</p>
+                <h3>Redes Sociais</h3>
+                <div class="footer-social">
+                    <img src="../img/instagram.png" alt="Instagram">
+                    <img src="../img/facebook.png" alt="Facebook">
+                </div>
+            </div>
+            <div class="footer-section footer-payment">
+                <h3>Formas de Pagamento</h3>
+                <div>
+                    <img src="../img/visa.jpg" alt="Visa">
+                    <img src="../img/mastercard.png" alt="Mastercard">
+                    <img src="../img/hipercard.png" alt="Hipercard">
+                    <img src="../img/elo.png" alt="Elo">
+                    <img src="../img/boleto.png" alt="Boleto">
+                    <img src="../img/pix.png" alt="Pix">
+                    <img src="../img/paypal.png" alt="Paypal">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // ================= VARIÁVEIS PRINCIPAIS =================
+        const inputBusca = document.getElementById("input-busca");
+        const botaoBusca = document.getElementById("botao-busca");
+        const resultadoContainer = document.getElementById("resultado-pesquisa");
+        const tituloPesquisa = document.getElementById("titulo-pesquisa");
+
+        // Captura todos os cards originais da página
+        const todosCards = document.querySelectorAll(".container .card");
+        const container = document.querySelector(".container").style.backgroundColor = "#000";
+
+        // ================= FUNÇÃO DE PESQUISA =================
+        function pesquisarProduto() {
+            const termo = inputBusca.value.toLowerCase().trim();
+
+            resultadoContainer.innerHTML = "";
+
+            if (termo === "") {
+                tituloPesquisa.style.display = "none";
+                resultadoContainer.style.display = "none";
+                return;
+            }
+
+            let encontrados = 0;
+
+            todosCards.forEach(card => {
+                const fundo = card.style.backgroundColor = "#fff";
+                const titulo = card.querySelector("h2").innerText.toLowerCase();
+                const texto = card.querySelector("h2").style.color = "#000";
+                const preco = card.querySelector(".preco-atual")?.innerText.toLowerCase() || "";
+
+                if (titulo.includes(termo) || preco.includes(termo)) {
+
+                    resultadoContainer.appendChild(card.cloneNode(true));
+                    encontrados++;
+                }
+            });
+
+            tituloPesquisa.style.display = "block";
+            resultadoContainer.style.display = "flex";
+
+            if (encontrados === 0) {
+                resultadoContainer.innerHTML = "<p>Nenhum produto encontrado.</p>";
+            }
+        }
+
+        // ================= EVENTOS =================
+
+        inputBusca.addEventListener("input", pesquisarProduto);
+
+        botaoBusca.addEventListener("click", pesquisarProduto);
+
+        // ======================= CARRINHO LATERAL =======================
+        const carrinho = document.getElementById("carrinho-lateral");
+        const fecharCarrinho = document.getElementById("fechar-carrinho");
+        const carrinhoItens = document.getElementById("carrinho-itens");
+        const carrinhoTotal = document.getElementById("carrinho-total");
+
+        // Abre/fecha carrinho
+        document.querySelector(".carrinho img").addEventListener("click", () => {
+            carrinho.classList.add("ativo");
+            renderCarrinho();
+        });
+        fecharCarrinho.addEventListener("click", () => carrinho.classList.remove("ativo"));
+
+        // Recupera carrinho do localStorage
+        function getCarrinho() {
+            return JSON.parse(localStorage.getItem("carrinho")) || [];
+        }
+        function salvarCarrinho(itens) {
+            localStorage.setItem("carrinho", JSON.stringify(itens));
+        }
+
+        // Renderiza os itens no carrinho
+        function renderCarrinho() {
+            const itens = getCarrinho();
+            carrinhoItens.innerHTML = "";
+
+            if (itens.length === 0) {
+                carrinhoItens.innerHTML = "<p>Seu carrinho está vazio</p>";
+                carrinhoTotal.innerText = "R$0,00";
+                return;
+            }
+
+            let total = 0;
+            itens.forEach((item, index) => {
+                total += item.preco * item.quantidade;
+                const div = document.createElement("div");
+                div.classList.add("item-carrinho");
+                div.innerHTML = `
+            <img src="${item.img}" alt="${item.nome}">
+            <div class="item-info">
+                <h4>${item.nome}</h4>
+                <p>R$${item.preco.toFixed(2)}</p>
+                <div class="quantidade">
+                    <button onclick="alterarQtd(${index}, -1)">-</button>
+                    <span>${item.quantidade}</span>
+                    <button onclick="alterarQtd(${index}, 1)">+</button>
+                </div>
+                <span class="remover" onclick="removerItem(${index})">Remover</span>
+            </div>
+        `;
+                carrinhoItens.appendChild(div);
+            });
+
+            carrinhoTotal.innerText = `R$${total.toFixed(2)}`;
+        }
+
+        // Alterar quantidade
+        function alterarQtd(index, delta) {
+            let itens = getCarrinho();
+            itens[index].quantidade += delta;
+            if (itens[index].quantidade <= 0) itens.splice(index, 1);
+            salvarCarrinho(itens);
+            renderCarrinho();
+        }
+
+        // Remover item
+        function removerItem(index) {
+            let itens = getCarrinho();
+            itens.splice(index, 1);
+            salvarCarrinho(itens);
+            renderCarrinho();
+        }
+
+        document.getElementById("finalizar-compra").addEventListener("click", () => {
+            // Verifica se há itens no carrinho antes de redirecionar
+            const itens = getCarrinho();
+            if (itens.length === 0) {
+                alert("Seu carrinho está vazio!");
+                return;
+            }
+
+            // Salva o total no localStorage para usar na página de pagamento
+            const total = itens.reduce((acc, item) => acc + item.preco * item.quantidade, 0);
+            localStorage.setItem("totalCompra", total.toFixed(2));
+
+            // Redireciona para a página de pagamento
+            window.location.href = "../html/identificacao.html";
+        });
+
+
+        // Renderiza carrinho ao carregar homepage
+        renderCarrinho();
+
+        // ======================= CAROUSEL =======================
+        const items = document.querySelectorAll('.carousel-item');
+        const totalItems = items.length;
+        let index = 0;
+        let interval;
+
+        function updateCarousel() {
+            const inner = document.querySelector('.carousel-inner');
+            inner.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        // Botões de navegação
+        document.querySelector('.carousel-btn.right').addEventListener('click', () => {
+            index = (index + 1) % totalItems;
+            updateCarousel();
+            resetAutoSlide();
+        });
+
+        document.querySelector('.carousel-btn.left').addEventListener('click', () => {
+            index = (index - 1 + totalItems) % totalItems;
+            updateCarousel();
+            resetAutoSlide();
+        });
+
+        function startAutoSlide() {
+            interval = setInterval(() => {
+                index = (index + 1) % totalItems;
+                updateCarousel();
+            }, 4000);
+        }
+
+        function resetAutoSlide() {
+            clearInterval(interval);
+            startAutoSlide();
+        }
+
+        startAutoSlide();
+
+
+    </script>
+</body>
+
+</html>

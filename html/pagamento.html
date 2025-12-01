@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciclotech - Pagamento</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/pagamento.css">
+</head>
+
+<body>
+    <header>
+        <div class="lado-esquerdo">
+            <a href="logout.php">SAIR</a>
+            <a href="home.php">HOME</a>
+        </div>
+
+        <div class="logo">
+            <img src="../img/logo.png" alt="Ciclotech">
+        </div>
+
+        <div class="carrinho">
+            <img src="../img/carrinho.png" alt="Carrinho" style="width: 25px; height: 25px; margin-right: 20px;">
+            <a href="contato.html" class="botaoContato" title="Fale Conosco">
+                <img id="ImgContato" src="../img/contato.png" alt="Contato">
+            </a>
+        </div>
+    </header>
+    
+    <!-- ================= CARRINHO LATERAL ================= -->
+    <div id="carrinho-lateral" class="carrinho-lateral">
+        <div class="carrinho-header">
+            <h2>Carrinho</h2>
+            <button id="fechar-carrinho">&times;</button>
+        </div>
+        <div id="carrinho-itens" class="carrinho-itens">
+            <p>Seu carrinho está vazio</p>
+        </div>
+        <div class="carrinho-footer">
+            <div class="total">Total: <span id="carrinho-total">R$0,00</span></div>
+            <button id="finalizar-compra">Finalizar Compra</button>
+        </div>
+    </div>
+    
+    <main>
+        <!-- ================= PROGRESS STEPS ================= -->
+        <div class="progress-container">
+            <h2 class="progress-title">Finalização de Pedido</h2>
+            <div class="progress-steps">
+                <div class="progress-bar"></div>
+                <div class="step completed">
+                    <div class="step-icon">1</div>
+                    <span class="step-label">Carrinho</span>
+                </div>
+                <div class="step completed">
+                    <div class="step-icon">2</div>
+                    <span class="step-label">Identificação</span>
+                </div>
+                <div class="step active">
+                    <div class="step-icon">3</div>
+                    <span class="step-label">Pagamento</span>
+                </div>
+                <div class="step">
+                    <div class="step-icon">4</div>
+                    <span class="step-label">Confirmação</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="checkout-container">
+            <!-- ================= PAYMENT CARD ================= -->
+            <div class="payment-card">
+                <h2 class="card-title"><i class="fas fa-credit-card"></i> Método de Pagamento</h2>
+                
+                <div class="payment-methods">
+                    <div class="payment-tabs">
+                        <button class="payment-tab active" data-tab="cartao">
+                            <i class="fas fa-credit-card"></i> Cartão de Crédito
+                        </button>
+                        <button class="payment-tab" data-tab="pix">
+                            <i class="fas fa-qrcode"></i> PIX
+                        </button>
+                    </div>
+                    
+                    <!-- Cartão de Crédito -->
+                    <div class="payment-content active" id="cartao-content">
+                        <form class="form-container" id="credit-card-form">
+                            <div class="form-group">
+                                <label for="numero-cartao">Número do Cartão</label>
+                                <input type="text" id="numero-cartao" placeholder="0000 0000 0000 0000" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="nome-titular">Nome do Titular</label>
+                                <input type="text" id="nome-titular" placeholder="Como escrito no cartão" required>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="validade-mes">Validade (Mês)</label>
+                                    <select id="validade-mes" required>
+                                        <option value="">Mês</option>
+                                        <option>01</option>
+                                        <option>02</option>
+                                        <option>03</option>
+                                        <option>04</option>
+                                        <option>05</option>
+                                        <option>06</option>
+                                        <option>07</option>
+                                        <option>08</option>
+                                        <option>09</option>
+                                        <option>10</option>
+                                        <option>11</option>
+                                        <option>12</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="validade-ano">Validade (Ano)</label>
+                                    <select id="validade-ano" required>
+                                        <option value="">Ano</option>
+                                        <option>2024</option>
+                                        <option>2025</option>
+                                        <option>2026</option>
+                                        <option>2027</option>
+                                        <option>2028</option>
+                                        <option>2029</option>
+                                        <option>2030</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" id="cvv" placeholder="000" required maxlength="3">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="parcelas">Parcelas</label>
+                                <select id="parcelas" required>
+                                    <option value="">Selecione as parcelas</option>
+                                    <option value="1">1x de R$ 299,90 sem juros</option>
+                                    <option value="2">2x de R$ 149,95 sem juros</option>
+                                    <option value="3">3x de R$ 99,97 sem juros</option>
+                                    <option value="4">4x de R$ 74,98 sem juros</option>
+                                    <option value="5">5x de R$ 59,98 sem juros</option>
+                                    <option value="6">6x de R$ 49,98 sem juros</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="btn-primary">
+                                <i class="fas fa-lock"></i> Finalizar Pagamento
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- PIX -->
+                    <div class="payment-content" id="pix-content">
+                        <div class="pix-content">
+                            <div class="pix-info">
+                                <p class="pix-label">Chave PIX (CNPJ):</p>
+                                <div class="pix-code">ciclotech9c2b4d7f1a8e5</div>
+                            </div>
+                            
+                            <div class="qr-code">
+                                <img src="../img/qrcode.png" alt="QR Code PIX">
+                            </div>
+                            
+                            <div class="pix-instructions">
+                                <h4>Como pagar com PIX:</h4>
+                                <ol>
+                                    <li>Abra o app do seu banco</li>
+                                    <li>Selecione a opção PIX</li>
+                                    <li>Escaneie o QR Code ou copie a chave PIX</li>
+                                    <li>Confirme o pagamento</li>
+                                    <li>Seu pedido será processado automaticamente</li>
+                                </ol>
+                            </div>
+                            
+                            <button class="btn-primary" id="btn-pix-paid">
+                                <i class="fas fa-check"></i> Já efetuei o pagamento
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="payment-methods-icons">
+                    <img src="../img/1.png" alt="Mastercard">
+                    <img src="../img/2.png" alt="Visa">
+                    <img src="../img/3.png" alt="Elo">
+                    <img src="../img/4.png" alt="Pix">
+                    <img src="../img/5.png" alt="Hipercard">
+                </div>
+            </div>
+            
+            <!-- ================= ORDER SUMMARY ================= -->
+            <div class="summary-card">
+                <h2 class="card-title"><i class="fas fa-shopping-bag"></i> Resumo do Pedido</h2>
+                
+                <div class="order-items" id="order-summary">
+                    <!-- Itens serão inseridos via JavaScript -->
+                </div>
+                
+                <div class="order-totals">
+                    <div class="total-row">
+                        <span>Subtotal</span>
+                        <span id="subtotal">R$0,00</span>
+                    </div>
+                    <div class="total-row">
+                        <span>Frete</span>
+                        <span id="frete">R$0,00</span>
+                    </div>
+                    <div class="total-row">
+                        <span>Desconto</span>
+                        <span id="desconto">-R$0,00</span>
+                    </div>
+                    <div class="total-row final">
+                        <span>Total</span>
+                        <span id="total-final">R$0,00</span>
+                    </div>
+                </div>
+                
+                <button class="btn-secondary" onclick="window.history.back()">
+                    <i class="fas fa-arrow-left"></i> Voltar para Identificação
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-top">
+            <span>Entregamos para o Mundo inteiro</span>
+            <span>Desconto no pix: 10%</span>
+            <span>SITE 100% SEGURO</span>
+        </div>
+        <div class="footer-main">
+            <div class="footer-logo">
+                <img src="../img/logo.png" alt="Ciclotech">
+                <p>A loja mais especializada em itens de ciclismo geral no Brasil.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Informações</h3>
+                <ul>
+                    <li><a href="index.php">Ciclotech</a></li>
+                    <li><a href="#">Política De Privacidade</a></li>
+                    <li><a href="#">Trocas e Devoluções</a></li>
+                </ul>
+            </div>
+            <div class="footer-section footer-contact">
+                <h3>Atendimento</h3>
+                <p>Segunda a Sexta<br>10:00 ás 16:00</p>
+                <br>
+                <h3>Contato</h3>
+                <p>(12)1234-5678</p>
+                <p>(12)1234-5678</p>
+                <h3>Redes Sociais</h3>
+                <div class="footer-social">
+                    <img src="../img/instagram.png" alt="Instagram">
+                    <img src="../img/facebook.png" alt="Facebook">
+                </div>
+            </div>
+            <div class="footer-section footer-payment">
+                <h3>Formas de Pagamento</h3>
+                <div>
+                    <img src="../img/visa.jpg" alt="Visa">
+                    <img src="../img/mastercard.png" alt="Mastercard">
+                    <img src="../img/hipercard.png" alt="Hipercard">
+                    <img src="../img/elo.png" alt="Elo">
+                    <img src="../img/boleto.png" alt="Boleto">
+                    <img src="../img/pix.png" alt="Pix">
+                    <img src="../img/paypal.png" alt="Paypal">
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // ======================= CARRINHO LATERAL =======================
+        const carrinho = document.getElementById("carrinho-lateral");
+        const fecharCarrinho = document.getElementById("fechar-carrinho");
+        const carrinhoItens = document.getElementById("carrinho-itens");
+        const carrinhoTotal = document.getElementById("carrinho-total");
+        
+        // Abre o carrinho
+        document.querySelector(".carrinho img").addEventListener("click", () => {
+            carrinho.classList.add("ativo");
+            renderCarrinho();
+        });
+        
+        // Fecha o carrinho
+        fecharCarrinho.addEventListener("click", () => carrinho.classList.remove("ativo"));
+        
+        // Funções do carrinho
+        function getCarrinho() {
+            return JSON.parse(localStorage.getItem("carrinho")) || [];
+        }
+        
+        function salvarCarrinho(itens) {
+            localStorage.setItem("carrinho", JSON.stringify(itens));
+        }
+        
+        // Renderiza os itens no carrinho
+        function renderCarrinho() {
+            const itens = getCarrinho();
+            carrinhoItens.innerHTML = "";
+            
+            if (itens.length === 0) {
+                carrinhoItens.innerHTML = "<p>Seu carrinho está vazio</p>";
+                carrinhoTotal.innerText = "R$0,00";
+                return;
+            }
+            
+            let total = 0;
+            itens.forEach((item, index) => {
+                total += item.preco * item.quantidade;
+                const div = document.createElement("div");
+                div.classList.add("item-carrinho");
+                div.innerHTML = `
+                    <img src="${item.img}" alt="${item.nome}">
+                    <div class="item-info">
+                        <h4>${item.nome}</h4>
+                        <p>R$${item.preco.toFixed(2)}</p>
+                        <div class="quantidade">
+                            <button onclick="alterarQtd(${index}, -1)">-</button>
+                            <span>${item.quantidade}</span>
+                            <button onclick="alterarQtd(${index}, 1)">+</button>
+                        </div>
+                        <span class="remover" onclick="removerItem(${index})">Remover</span>
+                    </div>
+                `;
+                carrinhoItens.appendChild(div);
+            });
+            
+            carrinhoTotal.innerText = `R$${total.toFixed(2)}`;
+        }
+        
+        function alterarQtd(index, delta) {
+            let itens = getCarrinho();
+            itens[index].quantidade += delta;
+            if (itens[index].quantidade <= 0) itens.splice(index, 1);
+            salvarCarrinho(itens);
+            renderCarrinho();
+            renderOrderSummary();
+        }
+        
+        function removerItem(index) {
+            let itens = getCarrinho();
+            itens.splice(index, 1);
+            salvarCarrinho(itens);
+            renderCarrinho();
+            renderOrderSummary();
+        }
+        
+        // ======================= RESUMO DO PEDIDO =======================
+        function renderOrderSummary() {
+            const itens = getCarrinho();
+            const orderSummary = document.getElementById("order-summary");
+            const subtotalElement = document.getElementById("subtotal");
+            const freteElement = document.getElementById("frete");
+            const descontoElement = document.getElementById("desconto");
+            const totalFinalElement = document.getElementById("total-final");
+            
+            orderSummary.innerHTML = "";
+            
+            if (itens.length === 0) {
+                orderSummary.innerHTML = "<p>Nenhum item no carrinho</p>";
+                subtotalElement.innerText = "R$0,00";
+                freteElement.innerText = "R$0,00";
+                descontoElement.innerText = "-R$0,00";
+                totalFinalElement.innerText = "R$0,00";
+                return;
+            }
+            
+            let subtotal = 0;
+            
+            itens.forEach(item => {
+                subtotal += item.preco * item.quantidade;
+                
+                const orderItem = document.createElement("div");
+                orderItem.classList.add("order-item");
+                orderItem.innerHTML = `
+                    <img src="${item.img}" alt="${item.nome}">
+                    <div class="item-details">
+                        <div class="item-name">${item.nome}</div>
+                        <div class="item-price">R$${item.preco.toFixed(2)}</div>
+                        <div class="item-quantity">Qtd: ${item.quantidade}</div>
+                    </div>
+                `;
+                orderSummary.appendChild(orderItem);
+            });
+            
+            // Cálculos de frete e desconto (valores fictícios)
+            const frete = subtotal > 200 ? 0 : 15.90;
+            const desconto = subtotal > 300 ? subtotal * 0.1 : 0;
+            const totalFinal = subtotal + frete - desconto;
+            
+            subtotalElement.innerText = `R$${subtotal.toFixed(2)}`;
+            freteElement.innerText = frete === 0 ? "Grátis" : `R$${frete.toFixed(2)}`;
+            descontoElement.innerText = `-R$${desconto.toFixed(2)}`;
+            totalFinalElement.innerText = `R$${totalFinal.toFixed(2)}`;
+            
+            // Atualiza as opções de parcelamento
+            updateInstallmentOptions(totalFinal);
+        }
+        
+        // Atualiza as opções de parcelamento
+        function updateInstallmentOptions(total) {
+            const parcelasSelect = document.getElementById("parcelas");
+            parcelasSelect.innerHTML = '<option value="">Selecione as parcelas</option>';
+            
+            for (let i = 1; i <= 6; i++) {
+                const valorParcela = total / i;
+                const option = document.createElement("option");
+                option.value = i;
+                option.textContent = `${i}x de R$ ${valorParcela.toFixed(2)} ${i <= 3 ? 'sem juros' : 'com juros'}`;
+                parcelasSelect.appendChild(option);
+            }
+        }
+        
+        // ======================= TROCA DE MÉTODOS DE PAGAMENTO =======================
+        const paymentTabs = document.querySelectorAll('.payment-tab');
+        const paymentContents = document.querySelectorAll('.payment-content');
+        
+        paymentTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const tabId = tab.getAttribute('data-tab');
+                
+                // Remove a classe active de todas as tabs e contents
+                paymentTabs.forEach(t => t.classList.remove('active'));
+                paymentContents.forEach(c => c.classList.remove('active'));
+                
+                // Adiciona a classe active à tab e content selecionados
+                tab.classList.add('active');
+                document.getElementById(`${tabId}-content`).classList.add('active');
+            });
+        });
+        
+        // ======================= FORMULÁRIO DE PAGAMENTO =======================
+        document.getElementById("credit-card-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+            
+            // Validação básica
+            const numeroCartao = document.getElementById("numero-cartao").value;
+            const nomeTitular = document.getElementById("nome-titular").value;
+            const validadeMes = document.getElementById("validade-mes").value;
+            const validadeAno = document.getElementById("validade-ano").value;
+            const cvv = document.getElementById("cvv").value;
+            const parcelas = document.getElementById("parcelas").value;
+            
+            if (!numeroCartao || !nomeTitular || !validadeMes || !validadeAno || !cvv || !parcelas) {
+                alert("Por favor, preencha todos os campos do cartão de crédito.");
+                return;
+            }
+            
+            // Simula processamento do pagamento
+            processPayment("cartao");
+        });
+        
+        document.getElementById("btn-pix-paid").addEventListener("click", function() {
+            processPayment("pix");
+        });
+        
+        function processPayment(metodo) {
+            // Simula processamento
+            const itens = getCarrinho();
+            if (itens.length === 0) {
+                alert("Seu carrinho está vazio!");
+                return;
+            }
+            
+            // Mostra loading
+            const btn = metodo === "cartao" 
+                ? document.querySelector('#credit-card-form button[type="submit"]')
+                : document.getElementById("btn-pix-paid");
+                
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processando...';
+            btn.disabled = true;
+            
+            // Simula delay de processamento
+            setTimeout(() => {
+                // Salva informações do pedido
+                const endereco = JSON.parse(localStorage.getItem("enderecoEntrega") || "{}");
+                const pedido = {
+                    id: Math.random().toString(36).substr(2, 9).toUpperCase(),
+                    itens: getCarrinho(),
+                    endereco: endereco,
+                    metodoPagamento: metodo,
+                    data: new Date().toISOString(),
+                    total: document.getElementById("total-final").innerText
+                };
+                
+                localStorage.setItem("ultimoPedido", JSON.stringify(pedido));
+                
+                // Limpa o carrinho
+                localStorage.removeItem("carrinho");
+                
+                // Redireciona para página de confirmação
+                window.location.href = "pago.html";
+            }, 2000);
+        }
+        
+        // ======================= INICIALIZAÇÃO =======================
+        document.addEventListener("DOMContentLoaded", function() {
+            renderCarrinho();
+            renderOrderSummary();
+        });
+    </script>
+</body>
+</html>

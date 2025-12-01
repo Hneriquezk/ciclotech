@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciclotech - Identificação</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/identificacao.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="lado-esquerdo">
+            <a href="logout.php">SAIR</a>
+            <a href="home.php">HOME</a>
+        </div>
+
+        <div class="logo">
+            <img src="../img/logo.png" alt="Ciclotech">
+        </div>
+
+        <div class="carrinho">
+            <a href="contato.html" class="botaoContato" title="Fale Conosco">
+                <img id="ImgContato" src="../img/contato.png" alt="Contato">
+            </a>
+        </div>
+    </header>
+    
+    <!-- ================= CARRINHO LATERAL ================= -->
+    <div id="carrinho-lateral" class="carrinho-lateral">
+        <div class="carrinho-header">
+            <h2>Carrinho</h2>
+            <button id="fechar-carrinho">&times;</button>
+        </div>
+        <div id="carrinho-itens" class="carrinho-itens">
+            <p>Seu carrinho está vazio</p>
+        </div>
+        <div class="carrinho-footer">
+            <div class="total">Total: <span id="carrinho-total">R$0,00</span></div>
+            <button id="finalizar-compra">Finalizar Compra</button>
+        </div>
+    </div>
+    
+    <main>
+        <!-- ================= PROGRESS STEPS ================= -->
+        <div class="progress-container">
+            <h2 class="progress-title">Finalização de Pedido</h2>
+            <div class="progress-steps">
+                <div class="progress-bar" style="width: 50%;"></div>
+                <div class="step completed">
+                    <div class="step-icon">1</div>
+                    <span class="step-label">Carrinho</span>
+                </div>
+                <div class="step active">
+                    <div class="step-icon">2</div>
+                    <span class="step-label">Identificação</span>
+                </div>
+                <div class="step">
+                    <div class="step-icon">3</div>
+                    <span class="step-label">Pagamento</span>
+                </div>
+                <div class="step">
+                    <div class="step-icon">4</div>
+                    <span class="step-label">Confirmação</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="checkout-container">
+            <!-- ================= ADDRESS CARD ================= -->
+            <div class="address-card">
+                <h2 class="card-title"><i class="fas fa-map-marker-alt"></i> Endereço de Entrega</h2>
+                
+                <form class="form-container" id="address-form">
+                    <div class="form-group">
+                        <label for="endereco">Endereço</label>
+                        <input type="text" id="endereco" placeholder="Rua, Avenida, etc." required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="numero">Número</label>
+                            <input type="text" id="numero" placeholder="Número" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="complemento">Complemento</label>
+                            <input type="text" id="complemento" placeholder="Apto, Bloco, etc.">
+                        </div>
+                        <div class="form-group">
+                            <label for="bairro">Bairro</label>
+                            <input type="text" id="bairro" placeholder="Bairro" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="cep">CEP</label>
+                            <input type="text" id="cep" placeholder="00000-000" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cidade">Cidade</label>
+                            <input type="text" id="cidade" placeholder="Cidade" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="estado">Estado</label>
+                            <select id="estado" required>
+                                <option value="">Selecione</option>
+                                <option>AC</option>
+                                <option>AL</option>
+                                <option>AP</option>
+                                <option>AM</option>
+                                <option>BA</option>
+                                <option>CE</option>
+                                <option>DF</option>
+                                <option>MA</option>
+                                <option>MG</option>
+                                <option>MT</option>
+                                <option>MS</option>
+                                <option>PA</option>
+                                <option>PB</option>
+                                <option>PR</option>
+                                <option>PE</option>
+                                <option>PI</option>
+                                <option>RJ</option>
+                                <option>RN</option>
+                                <option>RS</option>
+                                <option>RO</option>
+                                <option>RR</option>
+                                <option>SC</option>
+                                <option>SP</option>
+                                <option>SE</option>
+                                <option>TO</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-arrow-right"></i> Continuar para Pagamento
+                    </button>
+                </form>
+                
+                <div class="payments">
+                    <img src="../img/1.png" alt="MasterCard">
+                    <img src="../img/2.png" alt="Visa">
+                    <img src="../img/3.png" alt="Elo">
+                    <img src="../img/4.png" alt="Pix">
+                    <img src="../img/5.png" alt="Hipercard">
+                </div>
+            </div>
+            
+            <!-- ================= ORDER SUMMARY ================= -->
+            <div class="summary-card">
+                <h2 class="card-title"><i class="fas fa-shopping-bag"></i> Resumo do Pedido</h2>
+                
+                <div class="order-items" id="order-summary">
+                    <!-- Itens serão inseridos via JavaScript -->
+                </div>
+                
+                <div class="order-totals">
+                    <div class="total-row">
+                        <span>Subtotal</span>
+                        <span id="subtotal">R$0,00</span>
+                    </div>
+                    <div class="total-row">
+                        <span>Frete</span>
+                        <span id="frete">R$0,00</span>
+                    </div>
+                    <div class="total-row">
+                        <span>Desconto</span>
+                        <span id="desconto">-R$0,00</span>
+                    </div>
+                    <div class="total-row final">
+                        <span>Total</span>
+                        <span id="total-final">R$0,00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-top">
+            <span>Entregamos para o Brasil inteiro</span>
+            <span>Desconto no pix: 10%</span>
+            <span>SITE 100% SEGURO</span>
+        </div>
+        <div class="footer-main">
+            <div class="footer-logo">
+                <img src="../img/logo.png" alt="Ciclotech">
+                <p>A loja mais especializada em itens de ciclismo geral no Brasil.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Informações</h3>
+                <ul>
+                    <li><a href="home.php">Ciclotech</a></li>
+                    <li><a href="faq.php">Política De Privacidade</a></li>
+                    <li><a href="faq.php">Trocas e Devoluções</a></li>
+                </ul>
+            </div>
+            <div class="footer-section footer-contact">
+                <h3>Atendimento</h3>
+                <p>Segunda a Sexta<br>10:00 ás 16:00</p>
+                <br>
+                <h3>Contato</h3>
+                <p>(12)99729-1076</p>
+                <h3>Redes Sociais</h3>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/ciclotechog/"><img src="../img/instagram.png" alt="Instagram"></a>
+                    <a href="https://www.facebook.com/people/Ciclotech-CicloDevs/pfbid0fiNkHDuAtKPdAhwkQqdgLk4YYRBgQean95dUFzEVjg1eQH4CHDMdH5dUHTUaALrAl/"><img src="../img/facebook.png" alt="Facebook"></a>
+                </div>
+            </div>
+            <div class="footer-section footer-payment">
+                <h3>Formas de Pagamento</h3>
+                <div>
+                    <img src="../img/visa.jpg" alt="Visa">
+                    <img src="../img/mastercard.png" alt="Mastercard">
+                    <img src="../img/hipercard.png" alt="Hipercard">
+                    <img src="../img/elo.png" alt="Elo">
+                    <img src="../img/boleto.png" alt="Boleto">
+                    <img src="../img/pix.png" alt="Pix">
+                    <img src="../img/paypal.png" alt="Paypal">
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // ======================= CARRINHO LATERAL =======================
+        const carrinho = document.getElementById("carrinho-lateral");
+        const fecharCarrinho = document.getElementById("fechar-carrinho");
+        const carrinhoItens = document.getElementById("carrinho-itens");
+        const carrinhoTotal = document.getElementById("carrinho-total");
+        
+        // Abre o carrinho
+        document.querySelector(".carrinho img").addEventListener("click", () => {
+            carrinho.classList.add("ativo");
+            renderCarrinho();
+        });
+        
+        // Fecha o carrinho
+        fecharCarrinho.addEventListener("click", () => carrinho.classList.remove("ativo"));
+        
+        // Funções do carrinho
+        function getCarrinho() {
+            return JSON.parse(localStorage.getItem("carrinho")) || [];
+        }
+        
+        function salvarCarrinho(itens) {
+            localStorage.setItem("carrinho", JSON.stringify(itens));
+        }
+        
+        // Renderiza os itens no carrinho
+        function renderCarrinho() {
+            const itens = getCarrinho();
+            carrinhoItens.innerHTML = "";
+            
+            if (itens.length === 0) {
+                carrinhoItens.innerHTML = "<p>Seu carrinho está vazio</p>";
+                carrinhoTotal.innerText = "R$0,00";
+                return;
+            }
+            
+            let total = 0;
+            itens.forEach((item, index) => {
+                total += item.preco * item.quantidade;
+                const div = document.createElement("div");
+                div.classList.add("item-carrinho");
+                div.innerHTML = `
+                    <img src="${item.img}" alt="${item.nome}">
+                    <div class="item-info">
+                        <h4>${item.nome}</h4>
+                        <p>R$${item.preco.toFixed(2)}</p>
+                        <div class="quantidade">
+                            <button onclick="alterarQtd(${index}, -1)">-</button>
+                            <span>${item.quantidade}</span>
+                            <button onclick="alterarQtd(${index}, 1)">+</button>
+                        </div>
+                        <span class="remover" onclick="removerItem(${index})">Remover</span>
+                    </div>
+                `;
+                carrinhoItens.appendChild(div);
+            });
+            
+            carrinhoTotal.innerText = `R$${total.toFixed(2)}`;
+        }
+        
+        function alterarQtd(index, delta) {
+            let itens = getCarrinho();
+            itens[index].quantidade += delta;
+            if (itens[index].quantidade <= 0) itens.splice(index, 1);
+            salvarCarrinho(itens);
+            renderCarrinho();
+            renderOrderSummary();
+        }
+        
+        function removerItem(index) {
+            let itens = getCarrinho();
+            itens.splice(index, 1);
+            salvarCarrinho(itens);
+            renderCarrinho();
+            renderOrderSummary();
+        }
+        
+        // ======================= RESUMO DO PEDIDO =======================
+        function renderOrderSummary() {
+            const itens = getCarrinho();
+            const orderSummary = document.getElementById("order-summary");
+            const subtotalElement = document.getElementById("subtotal");
+            const freteElement = document.getElementById("frete");
+            const descontoElement = document.getElementById("desconto");
+            const totalFinalElement = document.getElementById("total-final");
+            
+            orderSummary.innerHTML = "";
+            
+            if (itens.length === 0) {
+                orderSummary.innerHTML = "<p>Nenhum item no carrinho</p>";
+                subtotalElement.innerText = "R$0,00";
+                freteElement.innerText = "R$0,00";
+                descontoElement.innerText = "-R$0,00";
+                totalFinalElement.innerText = "R$0,00";
+                return;
+            }
+            
+            let subtotal = 0;
+            
+            itens.forEach(item => {
+                subtotal += item.preco * item.quantidade;
+                
+                const orderItem = document.createElement("div");
+                orderItem.classList.add("order-item");
+                orderItem.innerHTML = `
+                    <img src="${item.img}" alt="${item.nome}">
+                    <div class="item-details">
+                        <div class="item-name">${item.nome}</div>
+                        <div class="item-price">R$${item.preco.toFixed(2)}</div>
+                        <div class="item-quantity">Qtd: ${item.quantidade}</div>
+                    </div>
+                `;
+                orderSummary.appendChild(orderItem);
+            });
+            
+            // Cálculos de frete e desconto (valores fictícios)
+            const frete = subtotal > 200 ? 0 : 15.90;
+            const desconto = subtotal > 300 ? subtotal * 0.1 : 0;
+            const totalFinal = subtotal + frete - desconto;
+            
+            subtotalElement.innerText = `R$${subtotal.toFixed(2)}`;
+            freteElement.innerText = frete === 0 ? "Grátis" : `R$${frete.toFixed(2)}`;
+            descontoElement.innerText = `-R$${desconto.toFixed(2)}`;
+            totalFinalElement.innerText = `R$${totalFinal.toFixed(2)}`;
+        }
+        
+        // ======================= FORMULÁRIO DE ENDEREÇO =======================
+        document.getElementById("address-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+            
+            // Validação básica
+            const endereco = document.getElementById("endereco").value;
+            const numero = document.getElementById("numero").value;
+            const bairro = document.getElementById("bairro").value;
+            const cep = document.getElementById("cep").value;
+            const cidade = document.getElementById("cidade").value;
+            const estado = document.getElementById("estado").value;
+            
+            if (!endereco || !numero || !bairro || !cep || !cidade || !estado) {
+                alert("Por favor, preencha todos os campos obrigatórios.");
+                return;
+            }
+            
+            // Salva o endereço no localStorage
+            const enderecoData = {
+                endereco,
+                numero,
+                complemento: document.getElementById("complemento").value,
+                bairro,
+                cep,
+                cidade,
+                estado
+            };
+            
+            localStorage.setItem("enderecoEntrega", JSON.stringify(enderecoData));
+            
+            // Redireciona para a página de pagamento
+            window.location.href = "pagamento.html";
+        });
+        
+        // ======================= INICIALIZAÇÃO =======================
+        document.addEventListener("DOMContentLoaded", function() {
+            renderCarrinho();
+            renderOrderSummary();
+        });
+    </script>
+</body>
+</html>

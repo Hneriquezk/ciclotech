@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciclotech - Confirmação</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/pago.css">
+</head>
+<body>
+    <header>
+        <div class="lado-esquerdo">
+            <a href="logout.php">SAIR</a>
+            <a href="home.php">HOME</a>
+        </div>
+
+        <div class="logo">
+            <img src="../img/logo.png" alt="Ciclotech">
+        </div>
+
+        <div class="carrinho">
+            <a href="contato.html" class="botaoContato" title="Fale Conosco">
+                <img id="ImgContato" src="../img/contato.png" alt="Contato">
+            </a>
+        </div>
+    </header>
+    
+    <main>
+        <!-- ================= PROGRESS STEPS ================= -->
+        <div class="progress-container">
+            <h2 class="progress-title">Finalização de Pedido</h2>
+            <div class="progress-steps">
+                <div class="progress-bar"></div>
+                <div class="step completed">
+                    <div class="step-icon">1</div>
+                    <span class="step-label">Carrinho</span>
+                </div>
+                <div class="step completed">
+                    <div class="step-icon">2</div>
+                    <span class="step-label">Identificação</span>
+                </div>
+                <div class="step completed">
+                    <div class="step-icon">3</div>
+                    <span class="step-label">Pagamento</span>
+                </div>
+                <div class="step active">
+                    <div class="step-icon">4</div>
+                    <span class="step-label">Confirmação</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="confirmation-container">
+            <!-- ================= CONFIRMATION CARD ================= -->
+            <div class="confirmation-card">
+                <h2 class="card-title"><i class="fas fa-check-circle"></i> Pedido Confirmado</h2>
+                
+                <div class="confirmation-content">
+                    <div class="confirmation-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    
+                    <div class="confirmation-message">
+                        <h2>Pagamento Efetuado com Sucesso!</h2>
+                        <p>Seu pedido foi processado e confirmado.</p>
+                        <p>Obrigado por comprar na Ciclotech!</p>
+                        
+                        <div class="order-number">
+                            Pedido #<span id="order-id">CT2024001</span>
+                        </div>
+                        
+                        <p>Você receberá um e-mail com todos os detalhes do pedido.</p>
+                    </div>
+                    
+                    <div class="confirmation-actions">
+                        <a href="home.php" class="btn-primary">
+                            <i class="fas fa-home"></i> Voltar para o Início
+                        </a>
+                        <a href="rastreio.php" class="btn-secondary">
+                            <i class="fas fa-truck"></i> Acompanhar Pedido
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ================= ORDER DETAILS CARD ================= -->
+            <div class="order-details-card">
+                <h2 class="card-title"><i class="fas fa-shopping-bag"></i> Resumo do Pedido</h2>
+                
+                <div class="order-info">
+                    <div class="info-group">
+                        <span class="info-label">Data do Pedido</span>
+                        <span class="info-value" id="order-date">20/12/2024</span>
+                    </div>
+                    
+                    <div class="info-group">
+                        <span class="info-label">Método de Pagamento</span>
+                        <span class="info-value" id="payment-method">Cartão de Crédito</span>
+                    </div>
+                    
+                    <div class="info-group">
+                        <span class="info-label">Status do Pagamento</span>
+                        <span class="info-value" style="color: #28a745;">Aprovado</span>
+                    </div>
+                    
+                    <div class="shipping-info">
+                        <h4>Endereço de Entrega</h4>
+                        <div class="shipping-address" id="shipping-address">
+                            Rua Exemplo, 123<br>
+                            Jardim das Flores<br>
+                            São Paulo - SP<br>
+                            CEP: 01234-567
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-items" id="order-summary">
+                    <!-- Itens serão inseridos via JavaScript -->
+                </div>
+                
+                <div class="order-totals">
+                    <div class="total-row">
+                        <span>Subtotal</span>
+                        <span id="subtotal">R$0,00</span>
+                    </div>
+                    <div class="total-row">
+                        <span>Frete</span>
+                        <span id="frete">R$0,00</span>
+                    </div>
+                    <div class="total-row">
+                        <span>Desconto</span>
+                        <span id="desconto">-R$0,00</span>
+                    </div>
+                    <div class="total-row final">
+                        <span>Total</span>
+                        <span id="total-final">R$0,00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-top">
+            <span>Entregamos para o Brasil inteiro</span>
+            <span>Desconto no pix: 10%</span>
+            <span>SITE 100% SEGURO</span>
+        </div>
+        <div class="footer-main">
+            <div class="footer-logo">
+                <img src="../img/logo.png" alt="Ciclotech">
+                <p>A loja mais especializada em itens de ciclismo geral no Brasil.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Informações</h3>
+                <ul>
+                    <li><a href="home.php">Ciclotech</a></li>
+                    <li><a href="faq.php">Política De Privacidade</a></li>
+                    <li><a href="faq.php">Trocas e Devoluções</a></li>
+                </ul>
+            </div>
+            <div class="footer-section footer-contact">
+                <h3>Atendimento</h3>
+                <p>Segunda a Sexta<br>10:00 ás 16:00</p>
+                <br>
+                <h3>Contato</h3>
+                <p>(12)99729-1076</p>
+                <h3>Redes Sociais</h3>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/ciclotechog/"><img src="../img/instagram.png" alt="Instagram"></a>
+                    <a href="https://www.facebook.com/people/Ciclotech-CicloDevs/pfbid0fiNkHDuAtKPdAhwkQqdgLk4YYRBgQean95dUFzEVjg1eQH4CHDMdH5dUHTUaALrAl/"><img src="../img/facebook.png" alt="Facebook"></a>
+                </div>
+            </div>
+            <div class="footer-section footer-payment">
+                <h3>Formas de Pagamento</h3>
+                <div>
+                    <img src="../img/visa.jpg" alt="Visa">
+                    <img src="../img/mastercard.png" alt="Mastercard">
+                    <img src="../img/hipercard.png" alt="Hipercard">
+                    <img src="../img/elo.png" alt="Elo">
+                    <img src="../img/boleto.png" alt="Boleto">
+                    <img src="../img/pix.png" alt="Pix">
+                    <img src="../img/paypal.png" alt="Paypal">
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // ======================= CARREGAR DADOS DO PEDIDO =======================
+        function loadOrderData() {
+            const orderData = JSON.parse(localStorage.getItem('ultimoPedido'));
+            
+            if (orderData) {
+                // Atualizar informações do pedido
+                document.getElementById('order-id').textContent = orderData.id;
+                document.getElementById('order-date').textContent = new Date(orderData.data).toLocaleDateString('pt-BR');
+                document.getElementById('payment-method').textContent = orderData.metodoPagamento === 'cartao' ? 'Cartão de Crédito' : 'PIX';
+                document.getElementById('total-final').textContent = orderData.total;
+                
+                // Atualizar endereço de entrega
+                if (orderData.endereco) {
+                    const address = orderData.endereco;
+                    document.getElementById('shipping-address').innerHTML = `
+                        ${address.endereco}, ${address.numero}<br>
+                        ${address.complemento ? address.complemento + '<br>' : ''}
+                        ${address.bairro}<br>
+                        ${address.cidade} - ${address.estado}<br>
+                        CEP: ${address.cep}
+                    `;
+                }
+                
+                // Renderizar itens do pedido
+                renderOrderItems(orderData.itens);
+            } else {
+                // Caso não haja dados, mostrar mensagem
+                document.getElementById('order-summary').innerHTML = '<p>Não foi possível carregar os detalhes do pedido.</p>';
+            }
+        }
+        
+        // ======================= RENDERIZAR ITENS DO PEDIDO =======================
+        function renderOrderItems(itens) {
+            const orderSummary = document.getElementById('order-summary');
+            const subtotalElement = document.getElementById('subtotal');
+            const freteElement = document.getElementById('frete');
+            const descontoElement = document.getElementById('desconto');
+            
+            orderSummary.innerHTML = "";
+            
+            if (!itens || itens.length === 0) {
+                orderSummary.innerHTML = "<p>Nenhum item no pedido</p>";
+                return;
+            }
+            
+            let subtotal = 0;
+            
+            itens.forEach(item => {
+                subtotal += item.preco * item.quantidade;
+                
+                const orderItem = document.createElement("div");
+                orderItem.classList.add("order-item");
+                orderItem.innerHTML = `
+                    <img src="${item.img}" alt="${item.nome}">
+                    <div class="item-details">
+                        <div class="item-name">${item.nome}</div>
+                        <div class="item-price">R$${item.preco.toFixed(2)}</div>
+                        <div class="item-quantity">Qtd: ${item.quantidade}</div>
+                    </div>
+                `;
+                orderSummary.appendChild(orderItem);
+            });
+            
+            // Cálculos de frete e desconto
+            const frete = subtotal > 200 ? 0 : 15.90;
+            const desconto = subtotal > 300 ? subtotal * 0.1 : 0;
+            
+            subtotalElement.innerText = `R$${subtotal.toFixed(2)}`;
+            freteElement.innerText = frete === 0 ? "Grátis" : `R$${frete.toFixed(2)}`;
+            descontoElement.innerText = `-R$${desconto.toFixed(2)}`;
+        }
+        
+        // ======================= GERAR NÚMERO DE PEDIDO ALEATÓRIO =======================
+        function generateOrderId() {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            let result = 'CT';
+            for (let i = 0; i < 7; i++) {
+                result += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return result;
+        }
+        
+        // ======================= INICIALIZAÇÃO =======================
+        document.addEventListener("DOMContentLoaded", function() {
+            // Verificar se há um pedido salvo
+            let orderData = JSON.parse(localStorage.getItem('ultimoPedido'));
+            
+            if (!orderData) {
+                // Se não houver, criar dados de exemplo
+                orderData = {
+                    id: generateOrderId(),
+                    itens: [],
+                    endereco: {
+                        endereco: "Rua das Bicicletas",
+                        numero: "123",
+                        complemento: "Sala 45",
+                        bairro: "Centro",
+                        cep: "01234-567",
+                        cidade: "São Paulo",
+                        estado: "SP"
+                    },
+                    metodoPagamento: "cartao",
+                    data: new Date().toISOString(),
+                    total: "R$299,90"
+                };
+                localStorage.setItem('ultimoPedido', JSON.stringify(orderData));
+            }
+            
+            loadOrderData();
+            
+            // Limpar carrinho após confirmação
+            localStorage.removeItem('carrinho');
+        });
+    </script>
+</body>
+</html>

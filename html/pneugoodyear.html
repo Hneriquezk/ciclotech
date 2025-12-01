@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciclotech</title>
+    <link rel="stylesheet" href="../css/pageprodutos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="lado-esquerdo">
+            <a href="../html/logout.php">SAIR</a>
+            <a href="../html/home.php">HOME</a>
+        </div>
+
+        <div class="logo">
+            <img src="../img/logo.png" alt="Ciclotech">
+        </div>
+
+        <div class="carrinho">
+            <img src="../img/carrinho.png" alt="Carrinho" style="width: 25px; height: 25px; margin-right: 20px;">
+            <img src="../img/Search.png" style="width: 25px; height: 25px; margin-right: 20px;">
+            <a href="contato.html" class="botaoContato" title="Fale Conosco">
+                <img id="ImgContato" src="../img/contato.png" alt="Contato"></a>
+        </div>
+    </header>
+
+    <!-- ================= BARRA DE PESQUISA ================= -->
+    <div class="barra-de-buscar-container">
+        <div class="barra-de-buscar">
+            <input id="input-busca" type="text" placeholder="O que você está buscando?">
+            <button id="botao-busca">
+                <img src="../img/Search.png" alt="Buscar">
+            </button>
+        </div>
+
+        <!-- ================= RESULTADOS DA PESQUISA ================= -->
+        <h1 id="titulo-pesquisa" style="display:none;">Resultados da Pesquisa</h1>
+        <div id="resultado-pesquisa" class="container">
+        </div>
+    </div>
+    <br>
+    <!-- ================= CARRINHO LATERAL ================= -->
+    <div id="carrinho-lateral" class="carrinho-lateral">
+        <div class="carrinho-header">
+            <h2 style="color: white;">Carrinho</h2>
+            <button id="fechar-carrinho">&times;</button>
+        </div>
+        <div id="carrinho-itens" class="carrinho-itens">
+            <p>Seu carrinho está vazio</p>
+        </div>
+        <div class="carrinho-footer">
+            <div class="total">Total: <span id="carrinho-total">R$0,00</span></div>
+            <button id="finalizar-compra">Finalizar Compra</button>
+        </div>
+    </div>
+    <div class="container-2">
+
+        <div class="imagem-produto">
+            <img src="../img/PneuGoodyear.png" alt="Pneu Goodyear Peak Ultimate">
+        </div>
+
+        <div class="detalhes-produto">
+            <h1>Pneu Goodyear Peak Ultimate</h1>
+            <div class="avaliacao">
+                <span class="estrela" data-valor="1">&#9733;</span>
+                <span class="estrela" data-valor="2">&#9733;</span>
+                <span class="estrela" data-valor="3">&#9733;</span>
+                <span class="estrela" data-valor="4">&#9733;</span>
+                <span class="estrela" data-valor="5">&#9733;</span>
+                <span class="texto-avaliacoes">1.758 avaliações</span>
+            </div>
+            <p style="color: white;"> O pneu para MTB Goodyear Peak Ultimate Complete é fabricado utilizando uma carcaça
+                robusta e balanceada. Sua construção de 120 tpi combina qualidade de tração excepcional com durabilidade
+                excepcional. O composto Rugged-Terrain é formulado especificamente para equilibrar aderência, desgaste e
+                eficiência.</p>
+            <br>
+            <div class="preco-antigo">De:R$1.049,00</div>
+            <div class="preco">R$368,90</div>
+            <p class="pix">No PIX já com 2.5% de desconto</p>
+            <p class="parcelamento">Em até 8x de >R$57,00 sem juros no cartão</p>
+            <br><br>
+            <button class="botao-comprar2">Adicionar ao Carrinho</button>
+        </div>
+    </div>
+    <br>
+    <center>
+        <h1 style="color: white; ">DESCRIÇÃO</h1>
+    </center>
+    <br><br>
+    <div class="tabs">
+        <button class="tab-link active" data-tab="pedivela">Conheça o Pneu Goodyear Peak Ultimate</button>
+    </div>
+    <!-- Conteúdo: Pedivela -->
+    <div id="pedivela" class="tab-content active">
+        <h2>Pneu Goodyear Peak Ultimate</h2>
+
+        <p>
+            Um pneu que se destaca em todos os departamentos, peso, eficiência de rolamento, durabilidade, tração e
+            facilidade de uso. É tão provável que seja visto conquistando longas subidas alpinas quanto domando a
+            inevitável descida que se almejado Confira os detalhes do Pneu Goodyear Peak Complete Tubeless.
+        </p>
+        <h3>Características:</h3>
+        <p>
+            • XC Tread Design: Criado a partir do DNA do pneu de montanha Goodyear's Peak;<br>
+            • Carcaça de 120 tpi: Carcaça flexível para melhor qualidade de condução;<br>
+            • Leve: menor peso rotativo melhora a aceleração;<br>
+            • Peso: 743g;<br>
+            • Medida: 29 x 2.25;<br>
+            • Máximo 58 PSI;<br>
+            • Pneu dobrável;<br>
+            • Tecnologia 120 TPI + M: Wall;<br>
+        </p>
+
+    </div>
+    <center>
+        <h1 style="color: white; ">RELACIONADOS</h1>
+    </center>
+    <br>
+    <hr><br><br>
+    <div class="container">
+        <div class="card">
+            <a href="scottazul.html" style="text-decoration: none;">
+                <img src="../img/scott azul.png" alt="SCOTT Spark RC Azul Metálico">
+                <h2>SCOTT Spark RC Azul Metálico</h2>
+                <div class="preco-antigo">De: R$39.999,00</div>
+                <div class="avista">À Vista</div>
+                <div class="preco-atual">R$33.249,05</div>
+                <div class="desconto">No Pix já com 5% de desconto</div>
+                <hr><br>
+                <div class="parcelas">R$34.999,00 ou 12X de <span>R$2.916,58</span> sem juros</div>
+                <br>
+                 <button class="botao-comprar" onclick="mostrarAlertaLogin()"><a style="color: white; text-decoration: none;"  href="scottazul.html">COMPRAR</a></button>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="scottscale.html" style="text-decoration: none;">
+                <img src="../img/scott scale.png" alt="SCOTT Scale 980 Dark Grey">
+                <h2>SCOTT Scale 980 Dark Grey</h2>
+                <div class="preco-antigo">De: R$8.000,00</div>
+                <div class="avista">À Vista</div>
+                <div class="preco-atual">R$6.640,50</div>
+                <div class="desconto">No Pix já com 5% de desconto</div>
+                <hr><br>
+                <div class="parcelas">R$6.990,00 ou 12X de <span>R$582,50</span> sem juros</div>
+                <br>
+                 <button class="botao-comprar" onclick="mostrarAlertaLogin()"><a style="color: white; text-decoration: none;"  href="scottscale.html">COMPRAR</a></button>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="scottrc.html" style="text-decoration: none;">
+                <img src="../img/scott foil rc 30.png" alt="Bicicleta Scott Foil RC 30 Ice Grey">
+                <h2>Bicicleta Scott Foil RC 30 Ice Grey</h2>
+                <div class="avista">À Vista</div>
+                <div class="preco-atual">R$47.499,91</div>
+                <div class="desconto">No Pix já com 5% de desconto</div>
+                <hr><br>
+                <div class="parcelas">R$49.999,90 ou 12X de <span>R$4.166,66</span> sem juros</div>
+                <br>
+                 <button class="botao-comprar" onclick="mostrarAlertaLogin()"><a style="color: white; text-decoration: none;"  href="scottrc.html">COMPRAR</a></button>
+            </a>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-top">
+            <span>Entregamos para o Brasil inteiro</span>
+            <span>Desconto no pix: 10%</span>
+            <span>SITE 100% SEGURO</span>
+        </div>
+        <div class="footer-main">
+            <div class="footer-logo">
+                <img src="../img/logo.png" alt="Ciclotech">
+                <p>A loja mais especializada em itens de ciclismo geral no Brasil.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Informações</h3>
+                <ul>
+                    <li><a href="home.php">Ciclotech</a></li>
+                    <li><a href="faq.php">Política De Privacidade</a></li>
+                    <li><a href="faq.php">Trocas e Devoluções</a></li>
+                </ul>
+            </div>
+            <div class="footer-section footer-contact">
+                <h3>Atendimento</h3>
+                <p>Segunda a Sexta<br>10:00 ás 16:00</p>
+                <br>
+                <h3>Contato</h3>
+                <p>(12)99729-1076</p>
+                <h3>Redes Sociais</h3>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/ciclotechog/"><img src="../img/instagram.png" alt="Instagram"></a>
+                    <a href="https://www.facebook.com/people/Ciclotech-CicloDevs/pfbid0fiNkHDuAtKPdAhwkQqdgLk4YYRBgQean95dUFzEVjg1eQH4CHDMdH5dUHTUaALrAl/"><img src="../img/facebook.png" alt="Facebook"></a>
+                </div>
+            </div>
+            <div class="footer-section footer-payment">
+                <h3>Formas de Pagamento</h3>
+                <div>
+                    <img src="../img/visa.jpg" alt="Visa">
+                    <img src="../img/mastercard.png" alt="Mastercard">
+                    <img src="../img/hipercard.png" alt="Hipercard">
+                    <img src="../img/elo.png" alt="Elo">
+                    <img src="../img/boleto.png" alt="Boleto">
+                    <img src="../img/pix.png" alt="Pix">
+                    <img src="../img/paypal.png" alt="Paypal">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // ==== CARRINHO GLOBAL COM LOCALSTORAGE ====
+        const carrinho = document.getElementById("carrinho-lateral");
+        const fecharCarrinho = document.getElementById("fechar-carrinho");
+        const carrinhoItens = document.getElementById("carrinho-itens");
+        const carrinhoTotal = document.getElementById("carrinho-total");
+
+        // Abre/fecha carrinho
+        document.querySelector(".carrinho img").addEventListener("click", () => {
+            carrinho.classList.add("ativo");
+            renderCarrinho();
+        });
+        fecharCarrinho.addEventListener("click", () => carrinho.classList.remove("ativo"));
+
+        // Recupera carrinho do localStorage
+        function getCarrinho() {
+            return JSON.parse(localStorage.getItem("carrinho")) || [];
+        }
+        function salvarCarrinho(itens) {
+            localStorage.setItem("carrinho", JSON.stringify(itens));
+        }
+
+        // Renderiza os itens no carrinho
+        function renderCarrinho() {
+            const itens = getCarrinho();
+            carrinhoItens.innerHTML = "";
+
+            if (itens.length === 0) {
+                carrinhoItens.innerHTML = "<p>Seu carrinho está vazio</p>";
+                carrinhoTotal.innerText = "R$0,00";
+                return;
+            }
+
+            let total = 0;
+            itens.forEach((item, index) => {
+                total += item.preco * item.quantidade;
+                const div = document.createElement("div");
+                div.classList.add("item-carrinho");
+                div.innerHTML = `
+      <img src="${item.img}" alt="${item.nome}">
+      <div class="item-info">
+        <h4>${item.nome}</h4>
+        <p>R$${item.preco.toFixed(2)}</p>
+        <div class="quantidade">
+          <button onclick="alterarQtd(${index}, -1)">-</button>
+          <span>${item.quantidade}</span>
+          <button onclick="alterarQtd(${index}, 1)">+</button>
+        </div>
+        <span class="remover" onclick="removerItem(${index})">Remover</span>
+      </div>
+    `;
+                carrinhoItens.appendChild(div);
+            });
+
+            carrinhoTotal.innerText = `R$${total.toFixed(2)}`;
+        }
+
+        // Adiciona item ao carrinho
+        function adicionarAoCarrinho(nome, preco, img) {
+            let itens = getCarrinho();
+            const existe = itens.find(i => i.nome === nome);
+
+            if (existe) {
+                existe.quantidade++;
+            } else {
+                itens.push({ nome, preco, img, quantidade: 1 });
+            }
+
+            salvarCarrinho(itens);
+            renderCarrinho();
+            carrinho.classList.add("ativo");
+        }
+
+        // Alterar quantidade
+        function alterarQtd(index, delta) {
+            let itens = getCarrinho();
+            itens[index].quantidade += delta;
+            if (itens[index].quantidade <= 0) itens.splice(index, 1);
+            salvarCarrinho(itens);
+            renderCarrinho();
+        }
+
+        // Remover item
+        function removerItem(index) {
+            let itens = getCarrinho();
+            itens.splice(index, 1);
+            salvarCarrinho(itens);
+            renderCarrinho();
+        }
+
+        document.getElementById("finalizar-compra").addEventListener("click", () => {
+            const itens = getCarrinho();
+            if (itens.length === 0) {
+                alert("Seu carrinho está vazio!");
+                return;
+            }
+
+            const total = itens.reduce((acc, item) => acc + item.preco * item.quantidade, 0);
+            localStorage.setItem("totalCompra", total.toFixed(2));
+
+            window.location.href = "../html/identificacao.html";
+        });
+
+        // Botão "Adicionar ao carrinho" desta página
+        document.querySelector(".botao-comprar2").addEventListener("click", () => {
+            const nome = document.querySelector(".detalhes-produto h1").innerText;
+            const preco = parseFloat(document.querySelector(".detalhes-produto .preco")
+                .innerText.replace("R$", "").replace(".", "").replace(",", "."));
+            const img = document.querySelector(".imagem-produto img").getAttribute("src");
+
+            adicionarAoCarrinho(nome, preco, img);
+        });
+
+        // Renderiza carrinho ao carregar página
+        renderCarrinho();
+
+        // ======================= PESQUISA DE PRODUTOS =======================
+
+        const inputBusca = document.getElementById("input-busca");
+        const botaoBusca = document.getElementById("botao-busca");
+        const resultadoContainer = document.getElementById("resultado-pesquisa");
+        const tituloPesquisa = document.getElementById("titulo-pesquisa");
+        const todosCards = document.querySelectorAll(".container .card");
+        document.querySelector(".container").style.backgroundColor = "#000";
+
+        function pesquisarProduto() {
+            const termo = inputBusca.value.toLowerCase().trim();
+            resultadoContainer.innerHTML = "";
+
+            if (termo === "") {
+                tituloPesquisa.style.display = "none";
+                resultadoContainer.style.display = "none";
+                return;
+            }
+
+            let encontrados = 0;
+
+            todosCards.forEach(card => {
+                card.style.backgroundColor = "#fff";
+                card.querySelector("h2").style.color = "#000";
+
+                const titulo = card.querySelector("h2").innerText.toLowerCase();
+                const preco = card.querySelector(".preco-atual")?.innerText.toLowerCase() || "";
+
+                if (titulo.includes(termo) || preco.includes(termo)) {
+                    resultadoContainer.appendChild(card.cloneNode(true));
+                    encontrados++;
+                }
+            });
+
+            tituloPesquisa.style.display = "block";
+            resultadoContainer.style.display = "flex";
+
+            if (encontrados === 0) {
+                resultadoContainer.innerHTML = "<p>Nenhum produto encontrado.</p>";
+            }
+        }
+
+        inputBusca.addEventListener("input", pesquisarProduto);
+        botaoBusca.addEventListener("click", pesquisarProduto);
+
+        // ======================= OVERLAY DE PESQUISA =======================
+
+        const iconeBusca = document.querySelector('.carrinho img[src="../img/Search.png"]');
+        const overlayPesquisa = document.createElement('div');
+
+        overlayPesquisa.id = "overlay-pesquisa";
+        overlayPesquisa.innerHTML = `
+  <div class="overlay-conteudo">
+    <div class="overlay-busca">
+      <img src="../img/Search-preto.png" alt="Buscar">
+      <input type="text" id="input-overlay" placeholder="Pesquisar">
+      <span id="btn-cancelar">Cancelar</span>
+    </div>
+
+    <div class="categorias">
+      <h2>Explorar por Categoria</h2>
+      <div class="categorias-grid">
+        <a href="estrada.html" class="categorias-item">
+          <img src="../img/estrada.jpg" alt="Estrada">
+          <span>Bikes de Estrada</span>
+        </a>
+        <a href="montanha.html" class="categorias-item">
+          <img src="../img/escalada.jpg" alt="Montanha">
+          <span>Bikes de Montanha</span>
+        </a>
+        <a href="trilha.html" class="categorias-item">
+          <img src="../img/trilha2.jpg" alt="Trilha">
+          <span>Bikes de Trilha</span>
+        </a>
+        <a href="cidade.html" class="categorias-item">
+          <img src="../img/cidade.jpg" alt="Cidade">
+          <span>Bikes Urbanas</span>
+        </a>
+      </div>
+    </div>
+
+    <div id="resultado-pesquisa"></div>
+  </div>
+`;
+
+        document.body.appendChild(overlayPesquisa);
+
+        const inputOverlay = overlayPesquisa.querySelector('#input-overlay');
+        const btnCancelar = overlayPesquisa.querySelector('#btn-cancelar');
+        const resultadoOverlay = overlayPesquisa.querySelector('#resultado-pesquisa');
+        const containerCategorias = overlayPesquisa.querySelector('.categorias');
+
+        // === Abrir overlay ===
+        iconeBusca.addEventListener('click', () => {
+            overlayPesquisa.style.display = 'block';
+            inputOverlay.focus();
+        });
+
+        // === Fechar overlay ===
+        btnCancelar.addEventListener('click', () => {
+            overlayPesquisa.style.display = 'none';
+            inputOverlay.value = '';
+            resultadoOverlay.innerHTML = '';
+            resultadoOverlay.style.display = 'none';
+            containerCategorias.style.display = 'block';
+        });
+
+        // === Função de pesquisa no overlay ===
+        function pesquisarNoOverlay() {
+            const termo = inputOverlay.value.toLowerCase().trim();
+            resultadoOverlay.innerHTML = "";
+
+            if (termo === "") {
+                resultadoOverlay.style.display = "none";
+                containerCategorias.style.display = "block"; // Mostra categorias quando input vazio
+                return;
+            }
+
+            containerCategorias.style.display = "none"; // Esconde categorias quando há pesquisa
+
+            let encontrados = 0;
+
+            document.querySelectorAll(".container .card").forEach(card => {
+                const titulo = card.querySelector("h2").innerText.toLowerCase();
+                const preco = card.querySelector(".preco-atual")?.innerText.toLowerCase() || "";
+
+                if (titulo.includes(termo) || preco.includes(termo)) {
+                    resultadoOverlay.appendChild(card.cloneNode(true));
+                    encontrados++;
+                }
+            });
+
+            resultadoOverlay.style.display = "flex";
+
+            if (encontrados === 0) {
+                resultadoOverlay.innerHTML = "<p>Nenhum produto encontrado.</p>";
+            }
+        }
+
+        // === Eventos ===
+        inputOverlay.addEventListener("input", pesquisarNoOverlay);
+
+        // Descrição
+        const tabLinks = document.querySelectorAll(".tab-link");
+        const tabContents = document.querySelectorAll(".tab-content");
+
+        tabLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                tabLinks.forEach(btn => btn.classList.remove("active"));
+                tabContents.forEach(content => content.classList.remove("active"));
+
+                link.classList.add("active");
+                document.getElementById(link.dataset.tab).classList.add("active");
+            });
+        });
+
+        //Estrelas 
+        const estrelas = document.querySelectorAll('.estrela');
+
+        estrelas.forEach((estrela, index) => {
+            estrela.addEventListener('click', () => {
+
+                estrelas.forEach(e => e.classList.remove('ativa'));
+
+                for (let i = 0; i <= index; i++) {
+                    estrelas[i].classList.add('ativa');
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>

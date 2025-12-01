@@ -1,0 +1,448 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0d0d0d;
+    color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    width: 280px;
+    background: #000000;
+    border-right: 1px solid #000000;
+    padding: 20px 0 15 35;
+    margin-top: -18px;
+    margin-left: -65px;
+}
+
+/* ======= NAVBAR SUPERIOR ======= */
+.navbar-top {
+    background-color: #000;
+    text-align: center;
+    padding: 15px 0;
+}
+header {
+  background: #000;
+  display: flex;
+  padding: 10px 30px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .lado-esquerdo a:hover {
+  color: #d80000;
+}
+
+.lado-esquerdo {
+  display: flex;
+  gap: 10px;
+  width: 25%;
+}
+
+header .lado-esquerdo a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+.logo {
+  height: 70px;
+  display: flex;
+}
+
+.carrinho {
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  width: 25%;
+  justify-content: end;
+}
+  .logo {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+/* ======= BARRA VERMELHA ======= */
+.navbar-red {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: #000000;
+    color: #fff;
+    height: 60px;
+}
+
+.titulo-navbar {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+}
+
+/* Botão "Sair" */
+.sair {
+    color: #000;
+    background-color: #f8f9fa;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.2s;
+    font-weight: 500;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sair:hover {
+    background-color: #dc2626;
+    color: white;
+    border-color: #b91c1c;
+}
+
+/* ======= DASHBOARD ======= */
+.dashboard {
+    padding: 0 40px 40px 40px;
+}
+
+/* ======= TOPO DO DASHBOARD - USUÁRIO ESQUERDA, CARDS DIREITA ======= */
+.dashboard-top {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    align-items: flex-start;
+}
+
+/* Card do usuário à ESQUERDA */
+.user-card-container {
+    flex: 0 0 280px;  /* Reduzido para dar mais espaço aos cards */
+}
+
+.user-card {
+    background: #000000;
+    color: #333;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+}
+
+.user-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+}
+
+.user-avatar {
+    margin-bottom: 20px;
+}
+
+.user-avatar img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #dc2626;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.user-info {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.user-name {
+    margin: 0 0 5px 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.user-role {
+    margin: 0;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Links de navegação dentro do card */
+.user-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.nav-link {
+    display: block;
+    padding: 12px 20px;
+    background-color: #f8f9fa;
+    color: #333;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.nav-link:hover {
+    background-color: #dc2626;
+    color: white;
+    transform: translateX(5px);
+}
+
+.nav-link.active {
+    background-color: #dc2626;
+    color: white;
+    border-color: #b91c1c;
+}
+
+/* Título do dashboard */
+.titulo-dash {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: right;
+    color: #fff;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.titulo-dash::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #d00000;
+}
+
+/* Grid de cards à DIREITA - AUMENTADOS */
+.cards-grid {
+    padding-top: 5px;
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;    /* Aumentado de 20px */
+}
+
+.card {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding-left: 165px;    /* Aumentado de 150px */
+    padding-right: 165px;   /* Aumentado de 150px */
+    padding-top: 25px;      /* Aumentado de 25px */
+    padding-bottom: 30px;   /* Aumentado de 30px */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    border: 1px solid #333;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
+}
+
+.card h3 {
+    color: #ccc;
+    margin-bottom: 20px;   /* Aumentado de 15px */
+    font-size: 22px;       /* Aumentado de 18px */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.valor {
+    font-size: 42px;       /* Aumentado de 32px */
+    font-weight: bold;
+    color: #4CAF50;
+    margin-bottom: 12px;   /* Aumentado de 8px */
+}
+
+.esgotado {
+    color: #ff4d4d;
+}
+
+.positivo {
+    font-size: 18px;
+    color: #4CAF50;
+    font-weight: 500;
+}
+
+.alerta {
+    font-size: 18px;
+    color: #ff4d4d;
+    font-weight: 500;
+}
+
+/* ======= TABELA ABAIXO ======= */
+.pedidos-container {
+    width: 100%;
+}
+
+.titulo-pedidos {
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.titulo-pedidos::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #d00000;
+}
+
+.tabela-pedidos {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid #333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.tabela-pedidos th {
+    background-color: #d00000;
+    color: #fff;
+    padding: 15px 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.tabela-pedidos td {
+    padding: 15px 10px;
+    border-bottom: 1px solid #333;
+    vertical-align: middle;
+}
+
+.tabela-pedidos tr:hover {
+    background-color: #222;
+}
+
+.tabela-pedidos tr:last-child td {
+    border-bottom: none;
+}
+
+/* ======= RESPONSIVIDADE ======= */
+@media (max-width: 1200px) {
+    .dashboard-top {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .user-card-container {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard {
+        padding: 0 20px 40px 20px;
+    }
+    
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .user-card {
+        padding: 20px;
+    }
+    
+    .user-avatar img {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .tabela-pedidos {
+        font-size: 14px;
+    }
+    
+    .valor {
+        font-size: 32px; /* Ajustado para mobile */
+    }
+    
+    .card {
+        padding-left: 100px;   /* Ajustado para mobile */
+        padding-right: 100px;  /* Ajustado para mobile */
+        padding-top: 25px;
+        padding-bottom: 30px;
+    }
+    
+    .card h3 {
+        font-size: 18px; /* Ajustado para mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard {
+        padding: 0 15px 30px 15px;
+    }
+    
+    .user-card {
+        padding: 15px;
+    }
+    
+    .card {
+        padding: 25px 20px; /* Ajustado para mobile */
+    }
+    
+    .valor {
+        font-size: 28px; /* Ajustado para mobile */
+    }
+    
+    .tabela-pedidos th,
+    .tabela-pedidos td {
+        padding: 12px 8px;
+        font-size: 13px;
+    }
+    
+    .user-name {
+        font-size: 20px;
+    }
+    
+    .nav-link {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+    
+    .card h3 {
+        font-size: 16px; /* Ajustado para mobile */
+        margin-bottom: 15px;
+    }
+}

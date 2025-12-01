@@ -1,0 +1,268 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0d0d0d;
+    color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+/* ======= NAVBAR SUPERIOR ======= */
+.navbar-top {
+    background-color: #000;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.logo {
+    height: 150px;
+    width: auto;
+}
+
+/* ======= BARRA VERMELHA ======= */
+.navbar-red {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: #d00000;
+    color: #fff;
+    height: 60px;
+}
+
+.titulo-navbar {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+}
+
+/* ======= DASHBOARD E CONTAINER ======= */
+.dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ======= TÍTULO DA PÁGINA ======= */
+.titulo-clientes {
+    text-align: center;
+    color: #fff;
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.titulo-clientes::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: #d00000;
+}
+
+/* ======= TABELA DE CLIENTES ======= */
+.tabela-clientes {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.tabela-clientes th {
+    background-color: #d00000;
+    color: white;
+    padding: 18px 15px;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-size: 14px;
+    border: none;
+}
+
+.tabela-clientes td {
+    padding: 16px 15px;
+    border-bottom: 1px solid #333;
+    font-size: 14px;
+}
+
+.tabela-clientes tr:last-child td {
+    border-bottom: none;
+}
+
+.tabela-clientes tr:hover {
+    background-color: #262626;
+    transition: background-color 0.3s ease;
+}
+
+/* ======= ESTILOS ESPECÍFICOS DAS CÉLULAS ======= */
+.tabela-clientes td:first-child {
+    font-weight: 600;
+    color: #d00000;
+}
+
+.tabela-clientes td:nth-child(2) {
+    font-weight: 500;
+    color: #fff;
+}
+
+.tabela-clientes td:nth-child(3) {
+    color: #4CAF50;
+    font-style: italic;
+}
+
+.tabela-clientes td:nth-child(4) {
+    color: #ccc;
+    font-size: 13px;
+}
+
+/* ======= BOTÃO EXCLUIR ======= */
+.btn-excluir {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #f44336;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 13px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-excluir:hover {
+    background-color: #da190b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(218, 25, 11, 0.3);
+}
+
+/* ======= ESTADO VAZIO ======= */
+.tabela-clientes td[colspan] {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+    padding: 40px;
+    background-color: #1a1a1a;
+    font-size: 16px;
+}
+
+/* ======= BADGE PARA EMAIL NÃO CADASTRADO ======= */
+.tabela-clientes td:contains("—") {
+    color: #888;
+    font-style: italic;
+}
+
+/* ======= ANIMAÇÕES ======= */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.tabela-clientes tbody tr {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.tabela-clientes tbody tr:nth-child(odd) {
+    animation-delay: 0.1s;
+}
+
+.tabela-clientes tbody tr:nth-child(even) {
+    animation-delay: 0.2s;
+}
+
+/* ======= RESPONSIVIDADE ======= */
+@media (max-width: 768px) {
+    .dashboard {
+        padding: 10px;
+    }
+    
+    .tabela-clientes {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .tabela-clientes th,
+    .tabela-clientes td {
+        padding: 12px 8px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+    
+    .titulo-clientes {
+        font-size: 22px;
+        margin: 30px 0 20px 0;
+    }
+    
+    .btn-excluir {
+        padding: 6px 12px;
+        font-size: 12px;
+        display: block;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .tabela-clientes {
+        font-size: 12px;
+    }
+    
+    .tabela-clientes th,
+    .tabela-clientes td {
+        padding: 8px 6px;
+    }
+    
+    .dashboard {
+        padding: 5px;
+    }
+}
+
+/* ======= ESTILOS PARA SCROLL PERSONALIZADO ======= */
+.tabela-clientes::-webkit-scrollbar {
+    height: 8px;
+}
+
+.tabela-clientes::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 4px;
+}
+
+.tabela-clientes::-webkit-scrollbar-thumb {
+    background: #d00000;
+    border-radius: 4px;
+}
+
+.tabela-clientes::-webkit-scrollbar-thumb:hover {
+    background: #ff4444;
+}
+
+/* Para páginas que não são o dashboard */
+.dashboard-main {
+    display: flex;
+    gap: 30px;
+    padding: 0 40px 40px 40px;
+    align-items: flex-start;
+}
+
+.content-area {
+    flex: 1;
+}
+
+/* Estilo específico para o link Sair */
+.sair-link {
+    background-color: #f8f9fa !important;
+    margin-top: 10px;
+}
+
+.sair-link:hover {
+    background-color: #b91c1c !important;
+    transform: translateX(5px) !important;
+}
